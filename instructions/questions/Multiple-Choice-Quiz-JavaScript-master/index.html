@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="experiments-platform.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div id="start"><br>יאללה נתחיל!</div>
+        <div id="quiz" style="display: none">
+            <div id="question"></div>
+            <div id="choices">
+                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+            </div>
+
+            <div id="counter"></div>
+            <div id="btimeGauge"></div>
+            <div id="timeGauge"></div>
+        </div>
+        <div id="progress"></div>
+    </div>
+    <button type="button" id="scoreContainer"><img src="img/startOver.png" width="100%" height="100%" /></button>
+    <button type="button" id="ins12"><img src="img/12.png" width="100%" height="100%" /></button>
+    <div>
+        <img id="stratBackground" src="img/startBackgroung.png" width="100%" height="100%" />
+    </div>
+    <script src="quiz.js"></script>
+</body>
+
+</html>
