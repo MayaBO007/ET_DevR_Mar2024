@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Money Cars</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <script src="experiments-platform.js"></script>
+    <link href="addtohomescreen/style/style.css" rel="stylesheet">
+    <link rel="icon" href="icons/favicon.ico">
+
+
+    <!--
+            this is how to create the icon pack and manifest
+            https://medium.com/@sam20gh/how-to-add-add-to-home-screen-to-your-website-4b07aee02676
+            and this is why it can't be automated on all browsers (IOS for example)
+            https://love2dev.com/pwa/add-to-homescreen-library/
+        -->
+    <!--
+            this is how to check if app is standalone:
+            https://stackoverflow.com/questions/41742390/javascript-to-check-if-pwa-or-mobile-web
+         -->
+
+    <!--
+    pwa stuff-
+    https://javascript.plainenglish.io/creating-a-browser-agnostic-pwa-install-button-41039f312fbe
+    https://www.geeksforgeeks.org/making-a-simple-pwa-under-5-minutes/
+-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- Set splash screen for iphones: 
+    https://appsco.pe/developer/splash-screens-->
+    <!------------------------------------------------------------------>
+    <link href="icons/splashscreens/iphone5_splash.png"
+        media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+    <link href="icons/splashscreens/iphone6_splash.png"
+        media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+    <link href="icons/splashscreens/iphoneplus_splash.png"
+        media="(device-width: 621px) and (device-height: 1104px) and (-webkit-device-pixel-ratio: 3)"
+        rel="apple-touch-startup-image" />
+    <link href="icons/splashscreens/iphonex_splash.png"
+        media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)"
+        rel="apple-touch-startup-image" />
+    <link href="icons/splashscreens/iphonexr_splash.png"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)"
+        rel="apple-touch-startup-image" />
+    <link href="icons/splashscreens/iphonexsmax_splash.png"
+        media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)"
+        rel="apple-touch-startup-image" />
+
+    <!------------------------------------------------------------------>
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180x180.png">
+    <!-- <link rel="apple-touch-icon" sizes="192x192" href="icons/192.png"> -->
+    <!-- <link rel="apple-touch-icon" sizes="256x256" href="icons/256.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="icons/512.png">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon copy.png"> -->
+    <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
+
+
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" href="icons/favicon.ico">
+
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#000000">
+
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-status-bar" content="#aa7700">
+    <meta name="apple-mobile-web-app-title" content="Money Cars">
+    <meta name="theme-color" content="black">
+
+
+    <!-- <link rel="apple-touch-startup-image" href="pics/Instructions/1.png"> -->
+    <img id="startImage" src="pics/moveToApp.png">
+    <img id="installIns" ; src="pics/Instructions/installIns.png">
+    <img id="andInstructions" ; src="pics/Instructions/installation_guide_Android.png">
+    <img id="iphoneInstructions" ; src="pics/Instructions/installation_guide_iOS.png">
+    <img id="problem" ; src="pics/problem.png">
+    <img id="problem_hor" ; src="pics/problem_hor.png">
+    <img id="front" ; src="pics/loadingPage.png">
+    <img id="front_lan" ; src="pics/loadingPage_lan.png">
+    <img id="endOfGame" ; src="pics/endOfGame.png">
+    <img id="endOfGame_hor" ; src="pics/endOfGame_hor.png">
+    <img id="fiveAM_hor" ; src="pics/5am_hor.png">
+    <img id="fiveAM" ; src="pics/5am.png">
+    <!-- <img id="moveToAppText" ; src="pics/moveToAppText.png"> -->
+
+    <div>
+        <button type="button" ontouchstart="" onclick=androidIns() id="notIphoneYellow"><img
+                src="pics/Instructions/notIphoneYellow.png" width="100%" height="100%" /></button>
+        <button type="button" ontouchstart="" onclick=iphoneIns() id="iphoneYellow"><img
+                src="pics/Instructions/IphoneYellow.png" width="100%" height="100%" /></button>
+        <!-- <button type="button" id="appDownloaded"><img src="pics/appDownloaded.png" width="100%"
+                height="100%" /></button> -->
+        <button type="button" ontouchstart="" id="moveToAppButton"><img src="pics/moveToApp.png" width="100%"
+                height="100%" /></button>
+        <button type="button" ontouchstart="" id="moveToAppText"><img src="pics/moveToAppText.png" width="100%"
+                height="100%" /></button>
+        <button type="button" ontouchstart="" id="moveToAppButton_lan"><img src="pics/moveToApp_lan.png" width="100%"
+                height="100%" /></button>
+        <button type="button" ontouchstart="" id="moveToAppText_lan"><img src="pics/moveToAppText_lan.png" width="100%"
+                height="100%" /></button>
+
+    </div>
+
+    <script src="addtohomescreen/src/addtohomescreen.js"></script>
+
+</head>
+
+<body style="margin:0; padding:0; height:100vh; width:100vh;">
+
+    <script>
+
+        function notAppYet() {
+            setTimeout(() => {
+                document.getElementById("installIns").style.display = "inline";
+                document.getElementById("iphoneYellow").style.display = "inline";
+                document.getElementById("notIphoneYellow").style.display = "inline";
+            }, 3000);
+        }
+
+        function androidIns() {
+            document.getElementById("installIns").style.display = "none";
+            document.getElementById("andInstructions").style.display = "inline";
+        }
+        function iphoneIns() {
+            document.getElementById("installIns").style.display = "none";
+            document.getElementById("iphoneInstructions").style.display = "inline";
+        }
+    </script>
+
+
+    <div>
+        <script>
+            const userAgent = navigator.userAgent;
+            function problemOrient() {
+                if (window.matchMedia("(orientation: landscape)").matches) {
+                    document.getElementById("problem").style.display = "inline";
+                } else {
+                    document.getElementById("problem_hor").style.display = "inline";
+                }
+                screen.orientation.addEventListener("change", function () {
+                    if (screen.orientation.type.startsWith("portrait")) {
+                        document.getElementById("problem_hor").style.display = "inline";
+                        document.getElementById("problem").style.display = "none";
+                    } else {
+                        document.getElementById("problem_hor").style.display = "none";
+                        document.getElementById("problem").style.display = "inline";
+                    }
+                })
+            }
+
+            function endGameOrient() {
+                if (window.matchMedia("(orientation: landscape)").matches) {
+                    document.getElementById("endOfGame").style.display = "inline";
+                } else {
+                    document.getElementById("endOfGame_hor").style.display = "inline";
+                }
+                screen.orientation.addEventListener("change", function () {
+                    if (screen.orientation.type.startsWith("portrait")) {
+                        document.getElementById("endOfGame_hor").style.display = "inline";
+                        document.getElementById("endOfGame").style.display = "none";
+                    } else {
+                        document.getElementById("endOfGame_hor").style.display = "none";
+                        document.getElementById("endOfGame").style.display = "inline";
+                    }
+                })
+            }
+        </script>
+        <script src="dayOrganizer.js"></script>
+        <script src="functions/timerPointes.js"></script>
+        <script src="findDevice.js"></script>
+    </div>
+
+    <div id="loading"> </div>
+    <div id="loading_lan"> </div>
+    <script>
+
+        if (localStorage.getItem('standaloneMode') === 'true') {
+            // The web app is running in standalone mode
+            document.getElementById("startImage").style.display = "inline";
+        } else {
+            // The web app is not running in standalone mode
+            // console.log('Web app is not running in standalone mode');
+            // } if (
+            //     (("standalone" in window.navigator) && !window.navigator.standalone) // for ios
+            //     ||
+            //     (!window.matchMedia('(disply-mode: standalone)').matches) //android
+            // ) {
+            notAppYet();
+            addToHomescreen()
+            localStorage.setItem('standaloneMode', 'true');
+        }
+
+        function startApp() {
+            setTimeout(() => {
+                document.getElementById("andInstructions").style.display = "none";
+                document.getElementById("iphoneInstructions").style.display = "none";
+                document.getElementById("iphoneYellow").style.display = "none";
+                document.getElementById("notIphoneYellow").style.display = "none";
+                document.getElementById("installIns").style.display = "none";
+                // document.getElementById("startImage").style.display = "none";
+                // document.getElementById("moveToAppText").style.display = "none";
+                moveToDay();
+                // platform.goToUrl("days/dayTwo/dayTwo.html");
+                if (window.matchMedia("(orientation: landscape)").matches) {
+                    document.getElementById("moveToAppButton_lan").style.display = "none";
+                    document.getElementById("front_lan").style.display = "inline";
+                    document.getElementById("loading_lan").style.display = "inline";
+                } else {
+                    document.getElementById("moveToAppButton").style.display = "none";
+                    document.getElementById("front").style.display = "inline";
+                    document.getElementById("loading").style.display = "inline";
+                }
+
+
+            }, 500)
+        }
+
+        //     check if implemented as PWA:
+        const ifPWAitr = setInterval(() => {
+
+            var isInWebAppiOS = window.navigator.standalone === true;
+            var isInWebAppChrome =
+                window.matchMedia("(display-mode: fullscreen)").matches ||
+                window.matchMedia("(display-mode: standalone)").matches ||
+                window.matchMedia("(display-mode: minimal-ui)").matches;
+
+            //     // if app PWA:
+            if (isInWebAppiOS || isInWebAppChrome) {
+                clearInterval(ifPWAitr);
+                if (window.matchMedia("(orientation: landscape)").matches) {
+                    document.getElementById("moveToAppButton_lan").style.display = "inline";
+                    // document.getElementById("moveToAppText_lan").style.display = "inline";
+                    window.addEventListener("orientationchange", function () {
+                        document.getElementById("moveToAppButton").style.display = "inline";
+                        // document.getElementById("moveToAppText").style.display = "inline";
+                        document.getElementById("moveToAppText_lan").style.display = "none";
+                        // document.getElementById("moveToAppText_lan").style.display = "none";
+                    })
+                } else {
+                    document.getElementById("moveToAppButton").style.display = "inline";
+                    // document.getElementById("moveToAppText").style.display = "inline";
+                    window.addEventListener("orientationchange", function () {
+                        document.getElementById("moveToAppButton").style.display = "none";
+                        document.getElementById("moveToAppText_hor").style.display = "inline";
+                    })
+                }
+                document.getElementById("moveToAppButton").addEventListener("click", startApp());
+                // document.getElementById("moveToAppText").addEventListener("click", startApp());
+                document.getElementById("moveToAppButton_lan").addEventListener("click", startApp());
+                // document.getElementById("moveToAppText_lan").addEventListener("click", startApp());
+            }
+        }, 200);
+
+
+
+    </script>
+
+
+    <!-- MY STUFF-->
+    <!-- 
+        <script>
+        let prompt;
+        window.addEventListener('beforeinstallprompt', function (e) {
+            // Prevent the mini-infobar from appearing on mobile
+            e.preventDefault();
+            // Stash the event so it can be triggered later.
+            prompt = e;
+        });
+
+        installButton.addEventListener('click', function () {
+            prompt.prompt();
+        })
+    </script>
+
+    <script>
+        let installed = false;
+        installButton.addEventListener('click', async function () {
+            prompt.prompt();
+            let result = await that.prompt.userChoice;
+            if (result && result.outcome === 'accepted') {
+                installed = true;
+                window.location.href = 'instructions/instructions.html';
+
+            }
+        })
+
+        window.addEventListener('appinstalled', async function (e) {
+            installButton.style.display = "none";
+        });
+    </script> -->
+
+
+    <!-- Service Worker -->
+    <script>
+        window.addEventListener('load', () => {
+            registerSW();
+        });
+
+        // Register the Service Worker
+        async function registerSW() {
+            if ('serviceWorker' in navigator) {
+                try {
+                    await navigator
+                        .serviceWorker
+                        .register('serviceworker.js');
+                }
+                catch (e) {
+                    console.log('SW registration failed');
+                }
+            }
+        }
+    </script>
+
+
+    <script>
+        // check if the app is instalabe:
+        let installable = true;
+        if (!('serviceWorker' in navigator)) {
+            installable = false;
+            console.log('app not loading... RELOADING page')
+        }
+    </script>
+
+
+
+</body>
+
+</html>

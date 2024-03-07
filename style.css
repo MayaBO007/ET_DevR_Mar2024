@@ -1,0 +1,971 @@
+/* Smartphones -----------
+@media only screen and (max-width: 760px) {
+    #some-element {
+        display: none;
+    }
+} */
+body {
+    overscroll-behavior-y: contain;
+    overscroll-behavior-y: none;
+    overflow-anchor: none;
+    margin: 0 auto;
+    width: 80%;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+
+}
+
+#startButton {
+    position: absolute;
+    left: 30%;
+    top: 25%;
+    width: 40vw;
+    height: 50vh;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+#startButton:active {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+
+}
+
+#startDevtestButton {
+    position: absolute;
+    left: 27.5%;
+    top: 20%;
+    width: 45%;
+    height: 75%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+}
+
+#moneyCar {
+    position: absolute;
+    left: 10%;
+    top: 25%;
+    width: 80%;
+    height: 60%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    animation-duration: 0.8s;
+    animation-name: moneyCarMove;
+}
+
+@keyframes moneyCarMove {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(-15deg) scale(1.5);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+
+#startYellowTestButton {
+    position: absolute;
+    left: 24%;
+    top: 1%;
+    width: 52%;
+    height: 99%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+}
+
+/* #startYellowTestButton:active {
+    transform: translateY(4px);
+} */
+
+
+#startDevtestButtonBlue {
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    width: 40%;
+    height: 64%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+}
+
+/* #startDevtestButtonBlue:active {
+    transform: translateY(4px);
+} */
+
+#startDevtestButtonRed {
+    position: absolute;
+    left: 30%;
+    top: 20%;
+    width: 40%;
+    height: 64%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+}
+
+/* #startDevtestButtonRed:active {
+    transform: translateY(4px);
+} */
+
+#redButton {
+    position: absolute;
+    left: 0%;
+    top: 33%;
+    width: 20%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#redButton:active {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+
+}
+
+#blueButton {
+    position: absolute;
+    left: 80%;
+    top: 33%;
+    width: 20%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+#blueButton:active {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+}
+
+
+#gameScreen {
+    /*background-image: url('road2.png'), url("desert.png");*/
+    background-image: url('pics/road.png');
+    height: 100%;
+    width: 59%;
+    left: 20.5%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    display: none;
+
+}
+
+
+#blueCar {
+    width: 4%;
+    height: 20%;
+    left: 48%;
+    top: 130%;
+    animation-play-state: paused;
+    position: absolute;
+    animation-name: blueCarMoving;
+    animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+    display: none;
+    animation-duration: 0.9s;
+    /* animation-delay: 100ms; */
+
+    /*animation-iteration-count: infinite;
+    animation-fill-mode: initial;*/
+}
+
+@keyframes blueCarMoving {
+    from {
+        top: 130%
+    }
+
+    to {
+        top: -30%
+    }
+
+    ;
+}
+
+#redCar {
+
+    width: 4%;
+    height: 20%;
+    left: 48%;
+    top: 130%;
+    animation-play-state: paused;
+    position: absolute;
+    animation-name: redCarMoving;
+    animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+    display: none;
+    animation-duration: 0.9s;
+
+    /* animation-delay: 100ms; */
+
+}
+
+@keyframes redCarMoving {
+    from {
+        top: 130%
+    }
+
+    to {
+        top: -30%
+    }
+
+    ;
+
+}
+
+#yellowCar {
+
+    width: 4%;
+    height: 20%;
+    left: 48%;
+    top: 130%;
+    animation-play-state: paused;
+    position: absolute;
+    animation-name: yellowCarMoving;
+    animation-duration: 0.7s;
+    animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+    display: none;
+    /* animation-delay: 100ms; */
+
+}
+
+@keyframes yellowCarMoving {
+    from {
+        top: 130%
+    }
+
+    to {
+        top: -30%
+    }
+}
+
+#airplane {
+
+    width: 4%;
+    height: 10%;
+    left: 45%;
+    top: 110%;
+    animation-play-state: paused;
+    position: absolute;
+    animation-name: airplaneMoving;
+    animation-duration: 2s;
+    animation-fill-mode: backwards;
+    animation-iteration-count: infinite;
+    display: none;
+    animation-delay: 1100ms;
+}
+
+@keyframes airplaneMoving {
+    from {
+        top: 130%
+    }
+
+    to {
+        top: -11%
+    }
+}
+
+#startPage {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: -1;
+}
+
+#ins1 {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: -1;
+}
+
+#ins2 {
+    position: absolute;
+    left: 2.5%;
+    top: 2%;
+    width: 95%;
+    height: 95%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: -1;
+}
+
+#ins3 {
+    position: absolute;
+    left: 2.5%;
+    top: 2%;
+    width: 95%;
+    height: 95%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: -1;
+}
+
+#ins4 {
+    position: absolute;
+    left: 2.5%;
+    top: 2%;
+    width: 95%;
+    height: 95%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: -1;
+}
+
+#ins5 {
+    position: absolute;
+    left: 2.5%;
+    top: 2%;
+    width: 95%;
+    height: 95%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: -1;
+}
+
+#ins6 {
+    position: absolute;
+    left: 2.5%;
+    top: 2%;
+    width: 95%;
+    height: 95%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: -1;
+}
+
+#ins7 {
+    position: absolute;
+    left: 2.5%;
+    top: 2%;
+    width: 95%;
+    height: 95%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: -1;
+}
+
+#ins8 {
+    position: absolute;
+    left: 2.5%;
+    top: 2%;
+    width: 95%;
+    height: 95%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: -1;
+}
+
+#ins9 {
+    position: absolute;
+    left: 2.5%;
+    top: 2%;
+    width: 95%;
+    height: 95%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: -1;
+}
+
+#ins10 {
+    position: absolute;
+    left: 2.5%;
+    top: 2%;
+    width: 95%;
+    height: 95%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: -1;
+}
+
+#ins11 {
+    position: absolute;
+    left: 2.5%;
+    top: 2%;
+    width: 95%;
+    height: 95%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: -1;
+}
+
+#ins12 {
+    position: absolute;
+    left: 2.5%;
+    top: 2%;
+    width: 95%;
+    height: 95%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: -1;
+}
+
+#ins13 {
+    position: fixed;
+    left: 15%;
+    top: 15%;
+    width: 70%;
+    height: 75%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+#doNotDisturbPage {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: -1;
+}
+
+#qPage {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: -1;
+}
+
+
+#next {
+    position: fixed;
+    left: 24%;
+    top: 87%;
+    width: 52%;
+    height: 8%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+}
+
+#next:active {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+
+}
+
+#doNotDisturb {
+    position: fixed;
+    left: 12.5%;
+    top: 65%;
+    width: 75%;
+    height: 17%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+}
+
+#doNotDisturb:active {
+    transform: translateY(4px);
+
+}
+
+#doNotDisturbGoBack {
+    position: fixed;
+    left: 30%;
+    top: 85%;
+    width: 40%;
+    height: 12%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+}
+
+#doNotDisturbGoBack:active {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+
+}
+
+#demoStart {
+    position: fixed;
+    left: 16%;
+    top: 80%;
+    width: 70%;
+    height: 15%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+}
+
+#demoStart:active {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+
+}
+
+#iphone {
+    position: fixed;
+    left: 10%;
+    top: 28%;
+    width: 35%;
+    height: 40%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+
+}
+
+#iphone:active {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+}
+
+#notIphone {
+    position: fixed;
+    left: 55%;
+    top: 28%;
+    width: 35%;
+    height: 40%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+#notIphone:active {
+    transform: translateY(4px);
+}
+
+#wrongRed {
+    position: fixed;
+    left: 28.5%;
+    top: 28%;
+    width: 43%;
+    height: 43%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+#wrongBlue {
+    position: fixed;
+    left: 28.5%;
+    top: 28%;
+    width: 43%;
+    height: 43%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+#wrongYellow {
+    position: fixed;
+    left: 28.5%;
+    top: 28%;
+    width: 43%;
+    height: 43%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+#corrRed {
+    position: fixed;
+    left: 35%;
+    top: 28%;
+    width: 30%;
+    height: 36%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+#corrBlue {
+    position: fixed;
+    left: 35%;
+    top: 28%;
+    width: 30%;
+    height: 36%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+#corrYellow {
+    position: fixed;
+    left: 35%;
+    top: 28%;
+    width: 30%;
+    height: 36%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+/* #rest {
+    position: fixed;
+    left: 25%;
+    top: 65%;
+    width: 25%;
+    height: 20%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+} */
+
+#pressButton {
+    position: fixed;
+    left: 32.5%;
+    top: 28%;
+    width: 35%;
+    height: 34%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+#qStart {
+    position: fixed;
+    left: 35%;
+    top: 65%;
+    width: 30%;
+    height: 27%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+#qStart:active {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+}
+
+/* #startAfterInstructions {
+    position: fixed;
+    left: 36%;
+    top: 65%;
+    width: 28%;
+    height: 27%;
+    border: none;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+} */
+
+/* #startAfterInstructions:active {
+    transform: translateY(4px);
+
+} */
+
+#endOfGame {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: 1000;
+
+}
+
+#endOfGame_hor {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: 1000;
+
+}
+
+#fiveAM {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+#fiveAM_hor {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: 999991;
+
+}
+
+#endDayMsg {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+#horizontal {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: 99999;
+}
+
+#installation_guide {
+
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    height: 90%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+    z-index: +3;
+}
+
+#moveToScreen {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+#problem {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+}
+
+#problem_hor {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+}
+
+#moveToAppButton {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+iframe[seamless] {
+    display: none;
+}
+
+#star {
+    position: absolute;
+    width: 18%;
+    height: 24%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+}
+
+#startStarTestButton {
+    position: absolute;
+    left: 24.5%;
+    top: 1%;
+    width: 52%;
+    height: 99%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+#startAfterStarTestButton {
+    position: absolute;
+    left: 27.5%;
+    top: 17%;
+    width: 45%;
+    height: 62%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+#moveToAppButton_lan {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: none;
+    background-color: transparent;
+    display: none;
+
+}
+
+/* 
+#moveToAppButton_lan:active {
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+} */
+
+#loading_lan {
+    background: lightblue;
+    border-radius: 50%;
+    width: 12vh;
+    height: 12vh;
+    left: 50vw;
+    top: 65%;
+    display: none;
+    z-index: 999;
+    position: absolute;
+    animation-name: goCircle;
+    -webkit-animation-name: goCircle;
+    animation-duration: 0.7s;
+    -webkit-animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+}
