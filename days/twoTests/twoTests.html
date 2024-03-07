@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <title>Money Cars - Day 3</title>
+        <link href='../../style.css' rel='stylesheet'>
+        <link rel="manifest" href="../../manifest.json" crossorigin="use-credentials">
+        <script src="experiments-platform.js"></script>
+
+
+        <style>
+                canvas {
+                        border: 1px solid black;
+                        position: absolute;
+                        width: 60%;
+                        height: 100%;
+                        top: 0%;
+                        left: 20%;
+                }
+
+                body {
+                        background-color: rgb(255, 252, 224);
+                        padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+                }
+
+                .endOfDayMessage {
+                        position: absolute;
+                        font-family: "Lucida Console", "Courier New", "monospace";
+                        left: 15%;
+                        top: 10%;
+                        width: 70%;
+                        height: 80%;
+                        border: none;
+                        border-radius: 15%;
+                        padding: 0% 0;
+                        color: black;
+                        background-color: rgb(180, 248, 222);
+                        opacity: 0.85;
+                        border: 1px solid black;
+                        background-position: center;
+                        text-align: center;
+                        display: none;
+                        background-repeat: no-repeat;
+
+                }
+        </style>
+</head>
+
+<div class="container"></div>
+
+<body>
+
+        <!-- <script type="module" src="indexThree.js"> </script> -->
+        <canvas id="gameScreen"> </canvas>
+
+        <div>
+                <button type="button" ontouchstart="" id="redButton"><img src="../../pics/redButton.png" width="100%"
+                                height="100%" /></button>
+                <button type="button" ontouchstart="" id="blueButton"><img src="../../pics/blueButton.png" width="100%"
+                                height="100%" /></button>
+                <button type="button" ontouchstart="" id="startButton"><img src="../../pics/startButton.png"
+                                width="100%" height="100%" /></button>
+                <button type="button" ontouchstart="" id="endDayMsg"><img src="../../pics/endDayMsg.png" width="100%"
+                                height="100%" /></button>
+                <button type="button" ontouchstart="" id="moveToAppButton"><img src="../../pics/moveToApp.png"
+                                width="100%" height="100%" /></button>
+        </div>
+
+        <iframe id="iframe-element" src="" class="hidden" style=" display:none; position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%;
+                 border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
+
+        <iframe id="iframe-element2" src="" class="hidden" style=" display:none; position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%;
+                border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
+
+        <iframe id="iframe-element3" src="" class="hidden" style=" display:none; position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%;
+                border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
+
+
+        <!-- <div id="yellowCars">
+                <input type="number" pattern="[0-9]*" inputmode="numeric" value="">
+        </div> -->
+
+        <div>
+                <img id="redCar" src="../../pics/redCar.png">
+                <img id="blueCar" src="../../pics/blueCar.png">
+                <img id="airplane" src="../../pics/airplane.png">
+                <img id="yellowCar" src="../../pics/yellowCar.png">
+                <!-- <img id="redCar" src="../../pics/redCar.png">
+                <img id="blueCar" src="../../pics/blueCar.png">
+                <img id="airplane" src="../../pics/airplane.png"> -->
+                <img id="ins1" ; src="../../pics/Instructions/1.png">
+                <!-- <img id="ins2" ; src="../../pics/Instructions/2.png">
+                <img id="ins3" ; src="../../pics/Instructions/3.png">
+                <img id="ins4" ; src="../../pics/Instructions/4.png">
+                <img id="ins5" ; src="../../pics/Instructions/5.png">
+                <img id="ins6" ; src="../../pics/Instructions/6.png">
+                <img id="ins7" ; src="../../pics/Instructions/7.png">
+                <img id="ins8" ; src="../../pics/Instructions/8.png">
+                <img id="ins9" ; src="../../pics/Instructions/9.png">
+                <img id="ins10" ; src="../../pics/Instructions/10.png">
+                <img id="ins11" ; src="../../pics/Instructions/11.png">
+                <img id="ins12" ; src="../../pics/Instructions/12.png">
+                <img id="doNotDisturbPage" ; src="../../pics/Instructions/dontDisLink.png">
+                <img id="wrongRed" ; src="../../pics/Instructions/wrongRed.png">
+                <img id="wrongBlue" ; src="../../pics/Instructions/wrongBlue.png">
+                <img id="rest" ; src="../../pics/Instructions/rest.png">
+                <img id="pressButton" ; src="../../pics/Instructions/pressButton.png">
+                <img id="qPage" ; src="../../pics/Instructions/qPage.png">
+                <img id="fifteen" ; src="../../pics/15_sec.gif">
+                <img id="TenSecTimeout" ; src="../../pics/10_sec_timer.gif">
+
+        -->
+                <img id="startPage" ; src="../../pics/startPage.png">
+                <img id="moneyCar" ; src="../../pics/moneyCar.png">
+                <img id="endOfGame" ; src="../../pics/endOfGame.png">
+                <img id="endOfGame_hor" ; src="../../pics/endOfGame_hor.png">
+                <img id="fiveAM" ; src="../../pics/5am.png">
+                <img id="fiveAM_hor" ; src="../../pics/5am_hor.png">
+                <!-- <img id="break" ; src="../../pics/break.png"> -->
+                <!-- <img id="secCountdown" ; src="../../pics/secondCountdown.gif">
+                <img id="startYellowTestButton" ; src="../../pics/startYellowTestButton.png">
+                <img id="startSwitchTestButton" ; src="../../pics/startSwitchTestButton.png"> -->
+                <!-- <img id="startDevtestButton" ; src="../../pics/startDevtestButton.png"> -->
+                <!-- <img id="startAfterInstructions" ; src="../../pics/startAfterInstructions.png"> -->
+                <!-- <img id="startAfterSwitchTestButton" ; src="../../pics/startAfterSwitchTestButton.png">
+                <img id="endYellowTestButton" ; src="../../pics/endYellowTestButton.png"> -->
+                <img id="horizontal" ; src="../../pics/horizontal.png">
+                <!-- <img id="secCountdown" ; src="../../pics/secondCountdown.gif"> -->
+                <img id="problem" ; src="../../pics/problem.png">
+                <img id="startStarTestButton" ; src="../../pics/startStarTestButton.png">
+                <img id="startAfterStarTestButton" ; src="../../pics/startAfterStarTestButton.png">
+                <img id="star" ; src="../../pics/star.png">
+
+        </div>
+
+        <div class="endOfDayMessage" id="endOfDayMessage" ;>
+                <h2 id="todayWins"><br>
+                        <h2 id="redWins"><br>
+                                <h2 id="blueWins"><br>
+                                        <h2 id="yellowWins"><br>
+                                                <h2 id="seeYouTomorrow"></h2>
+        </div>
+        <div>
+                <script>
+                        const redElement = document.getElementById("redButton");
+                        const blueElement = document.getElementById("blueButton");
+                        let redPress = 0;
+                        let bluePress = 0;
+                        let redClick;
+                        let blueClick;
+                        // let yellowRed;
+                        // let yellowBlue;
+                </script>
+        </div>
+        <div>
+
+                <script src="../../functions/randomThings.js"></script>
+                <script src="../../functions/timerPointes.js"></script>
+                <script src="../../functions/restAllFunctions.js"></script>
+                <script src="../../functions/orientation.js"></script>
+                <script src="../../dayOrganizer.js"></script>
+                <!-- <script src="../dayOne/firstDay.js"></script>
+                <script src="../../instructions/instructions.js"></script>
+                <script src="../../instructions/Demo.js"></script> -->
+                <script src="gameInterval2Tests.js"></script>
+                <script src="twoTests.js"></script>
+                <!-- <script src="yellowCarInterval.js"></script> -->
+                <script src="starsTest.js"></script>
+                <script src="speedsTest.js"></script>
+                <!-- <script src="buttonsTest.js"></script> -->
+                <!-- <script src="../../timer.js"></script> -->
+                <!-- <script src="../dayTwo/gameInterval.js"></script>
+                <script src="../dayFour/devTest.js"></script> 
+                <script src="functions/helpers.js"></script> -->
+                <script src="indexTwoTests.js"> </script>
+        </div>
+
+        <script>
+                document.addEventListener("contextmenu", function (event) {
+                        event.preventDefault();
+                });
+                redElement.addEventListener("contextmenu", function (event) {
+                        event.preventDefault();
+                });
+                blueElement.addEventListener("contextmenu", function (event) {
+                        event.preventDefault();
+                });
+                document.addEventListener('contextmenu', event => {
+                        event.preventDefault();
+                });
+                timeline();
+
+        </script>
+</body>
+
+</html>
