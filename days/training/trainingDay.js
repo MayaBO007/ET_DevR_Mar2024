@@ -144,9 +144,9 @@ async function trainingDay() {
                                 blueClick = function () {
                                     bluePress++;
                                     if (bluePress == 1) {
-                                        correctFirstBluePressStar.push(new Date().getTime() - milliseconds);
+                                        correctFirstBluePress.push(new Date().getTime() - milliseconds);
                                     } else {
-                                        correctBluePressStar.push(new Date().getTime() - milliseconds);
+                                        correctBluePress.push(new Date().getTime() - milliseconds);
                                     }
                                 }
                                 blueElement.addEventListener("touchstart", blueClick);
