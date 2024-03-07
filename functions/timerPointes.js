@@ -305,15 +305,15 @@ async function sumCorrectFirstPress() {
 
             data.forEach((entry) => {
                 for (const key in entry) {
-                    if (key.startsWith('correctFirstBluePress')) {
+                    if (key.startsWith('correctFirstRedPress')) {
                         const pressArray = entry[key];
-                        totalBlueSum += pressArray.length;
-                    } else if (key.startsWith('correctFirstRedPress')) {
-                        if (key == 'correctFirstRedPressDevtest') {
+                        totalRedSum += pressArray.length;
+                    } else if (key.startsWith('correctFirstBluePress')) {
+                        if (key == 'correctFirstBluePressDevtest') {
                             continue;
                         }
                         const pressArray = entry[key];
-                        totalRedSum += pressArray.length;
+                        totalBlueSum += pressArray.length;
                     } else if (key.startsWith('correctYellowPress')) {
                         const pressArray = entry[key];
                         totalYellowSum += pressArray.length;
