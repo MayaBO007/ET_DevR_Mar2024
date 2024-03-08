@@ -71,7 +71,8 @@ function fiveAMOrient() {
         })
     } else {
         window.addEventListener("orientationchange", function () {
-            if (window.orientation != 0) {
+            if (window.orientation == 0) {
+                document.getElementById("horizontal").style.display = "none";
                 document.getElementById("fiveAM_hor").style.display = "inline";
                 document.getElementById("fiveAM").style.display = "none";
             } else {
@@ -99,7 +100,8 @@ function problemOrient() {
         })
     } else {
         window.addEventListener("orientationchange", function () {
-            if (window.orientation != 0) {
+            if (window.orientation == 0) {
+                document.getElementById("horizontal").style.display = "none";
                 document.getElementById("problem_hor").style.display = "inline";
                 document.getElementById("problem").style.display = "none";
             } else {
@@ -128,7 +130,8 @@ function endGameOrient() {
         })
     } else {
         window.addEventListener("orientationchange", function () {
-            if (window.orientation != 0) {
+            if (window.orientation == 0) {
+                document.getElementById("horizontal").style.display = "none";
                 document.getElementById("endOfGame_hor").style.display = "inline";
                 document.getElementById("endOfGame").style.display = "none";
             } else {
