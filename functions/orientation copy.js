@@ -10,21 +10,30 @@ if (window.matchMedia("(orientation: landscape)").matches) {
 } else {
     showOnlyLandscapeMessage()
 }
-screen.orientation.addEventListener("change", function () {
-    // if ortation is changed from the main landscape mode
-    if (window.orientation == 0) { // originally I used this: event.target.screen.orientation.angle - but this does not work on iphones
-        showOnlyLandscapeMessage()
-    } else { // device rotated back to the main landscape mode
-        removeOnlyLandscapeMessage()
-    }
-    // record data:
-    // screenOrientationEvents.push({
-    //     orientationAngle: window.orientation,
-    //     orientationTime: new Date(),
-    //     OrientationTimeStamp: event.timeStamp,
-    // });
-});
-
+if (screen.orientation) {
+    screen.orientation.addEventListener("change", function () {
+        // if ortation is changed from the main landscape mode
+        if (window.orientation == 0) { // originally I used this: event.target.screen.orientation.angle - but this does not work on iphones
+            showOnlyLandscapeMessage()
+        } else { // device rotated back to the main landscape mode
+            removeOnlyLandscapeMessage()
+        }
+        // record data:
+        // screenOrientationEvents.push({
+        //     orientationAngle: window.orientation,
+        //     orientationTime: new Date(),
+        //     OrientationTimeStamp: event.timeStamp,
+        // });
+    });
+} else {
+    (window.addEventListener("orientationchange", function () {
+        if (window.orientation == 0) { // originally I used this: event.target.screen.orientation.angle - but this does not work on iphones
+            showOnlyLandscapeMessage()
+        } else { // device rotated back to the main landscape mode
+            removeOnlyLandscapeMessage()
+        }
+    }))
+}
 
 
 function showOnlyLandscapeMessage() {
