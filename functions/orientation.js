@@ -59,32 +59,55 @@ function fiveAMOrient() {
     } else {
         document.getElementById("fiveAM_hor").style.display = "inline";
     }
-    screen.orientation.addEventListener("change", function () {
-        if (screen.orientation.type.startsWith("portrait")) {
-            document.getElementById("fiveAM_hor").style.display = "inline";
-            document.getElementById("fiveAM").style.display = "none";
-        } else {
-            document.getElementById("fiveAM_hor").style.display = "none";
-            document.getElementById("fiveAM").style.display = "inline";
-        }
-    })
+    if (screen.orientation) {
+        screen.orientation.addEventListener("change", function () {
+            if (screen.orientation.type.startsWith("portrait")) {
+                document.getElementById("fiveAM_hor").style.display = "inline";
+                document.getElementById("fiveAM").style.display = "none";
+            } else {
+                document.getElementById("fiveAM_hor").style.display = "none";
+                document.getElementById("fiveAM").style.display = "inline";
+            }
+        })
+    } else {
+        window.addEventListener("orientationchange", function () {
+            if (window.orientation != 0) {
+                document.getElementById("fiveAM_hor").style.display = "inline";
+                document.getElementById("fiveAM").style.display = "none";
+            } else {
+                document.getElementById("fiveAM_hor").style.display = "none";
+                document.getElementById("fiveAM").style.display = "inline";
+            }
+        })
+    }
 }
-
 function problemOrient() {
     if (window.matchMedia("(orientation: landscape)").matches) {
         document.getElementById("problem").style.display = "inline";
     } else {
         document.getElementById("problem_hor").style.display = "inline";
     }
-    screen.orientation.addEventListener("change", function () {
-        if (screen.orientation.type.startsWith("portrait")) {
-            document.getElementById("problem_hor").style.display = "inline";
-            document.getElementById("problem").style.display = "none";
-        } else {
-            document.getElementById("problem_hor").style.display = "none";
-            document.getElementById("problem").style.display = "inline";
-        }
-    })
+    if (screen.orientation) {
+        screen.orientation.addEventListener("change", function () {
+            if (screen.orientation.type.startsWith("portrait")) {
+                document.getElementById("problem_hor").style.display = "inline";
+                document.getElementById("problem").style.display = "none";
+            } else {
+                document.getElementById("problem_hor").style.display = "none";
+                document.getElementById("problem").style.display = "inline";
+            }
+        })
+    } else {
+        window.addEventListener("orientationchange", function () {
+            if (window.orientation != 0) {
+                document.getElementById("problem_hor").style.display = "inline";
+                document.getElementById("problem").style.display = "none";
+            } else {
+                document.getElementById("problem_hor").style.display = "none";
+                document.getElementById("problem").style.display = "inline";
+            }
+        })
+    }
 }
 
 function endGameOrient() {
@@ -93,13 +116,25 @@ function endGameOrient() {
     } else {
         document.getElementById("endOfGame_hor").style.display = "inline";
     }
-    screen.orientation.addEventListener("change", function () {
-        if (screen.orientation.type.startsWith("portrait")) {
-            document.getElementById("endOfGame_hor").style.display = "inline";
-            document.getElementById("endOfGame").style.display = "none";
-        } else {
-            document.getElementById("endOfGame_hor").style.display = "none";
-            document.getElementById("endOfGame").style.display = "inline";
-        }
-    })
+    if (screen.orientation) {
+        screen.orientation.addEventListener("change", function () {
+            if (screen.orientation.type.startsWith("portrait")) {
+                document.getElementById("endOfGame_hor").style.display = "inline";
+                document.getElementById("endOfGame").style.display = "none";
+            } else {
+                document.getElementById("endOfGame_hor").style.display = "none";
+                document.getElementById("endOfGame").style.display = "inline";
+            }
+        })
+    } else {
+        window.addEventListener("orientationchange", function () {
+            if (window.orientation != 0) {
+                document.getElementById("endOfGame_hor").style.display = "inline";
+                document.getElementById("endOfGame").style.display = "none";
+            } else {
+                document.getElementById("endOfGame_hor").style.display = "none";
+                document.getElementById("endOfGame").style.display = "inline";
+            }
+        })
+    }
 }
