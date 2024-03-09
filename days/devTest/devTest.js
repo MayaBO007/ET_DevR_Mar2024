@@ -57,12 +57,12 @@ function devQuestion() {
 
         document.getElementById("choiceA").addEventListener("click", function () {
             document.getElementById("container").style.display = "none"; // Hide the container after the user clicks
-            resolve("אדום");
+            resolve("red");
         });
 
         document.getElementById("choiceB").addEventListener("click", function () {
             document.getElementById("container").style.display = "none"; // Hide the container after the user clicks
-            resolve("כחול");
+            resolve("blue");
         });
     });
 }
@@ -191,7 +191,7 @@ async function startDevTest() {
                     devColorInput.push(devColor);
                     function savingDev() {
                         platform.saveSession(responsesDev, false).then(() => {
-                            resolve("doneDevTest");
+                            resolve("doneTest2");
                             reset_yellowCar();
                             reset_blueCar();
                             reset_redCar();
