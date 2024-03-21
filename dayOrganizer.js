@@ -9,7 +9,7 @@ function moveToDay() {
             const moveToAppButton = document.getElementById("moveToAppButton");
             const loading = document.getElementById("loading");
 
-            if (todayDate == "20") { //NO ZEROS IN FRONT OF SINGEL DIGITS
+            if ((todayDate >= "20") && (studySessionData.doneTest1 == "")) { //NO ZEROS IN FRONT OF SINGEL DIGITS
                 platform.goToUrl("days/twoTests/twoTests.html");
             } else if ((typeof studySessionData === "undefined" || studySessionData.doneInstructions === "")) {
                 if (Number(todayDate) == 10) { //change to exp start date
