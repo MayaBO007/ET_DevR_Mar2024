@@ -3,6 +3,7 @@
 function timeline() {
     let goIns = async function () {
         studySessionData.doneInstructions = "stratIns";
+        studySessionData.userDevice = userDevice;
         let doneInstructions = await startFirstDay();
         if (doneInstructions == "doneInstructions") {
             let updatedDates = updateDates();
