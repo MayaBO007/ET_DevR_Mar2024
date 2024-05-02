@@ -212,14 +212,18 @@ function updateDates() {
         return
     } else if ((studySessionData.isDayDone == "") && (studySessionData.doneInstructions != "")) {
         lastGame = null;
-        yesterdayPlusOne = null;
+        lastGamePlusOne = null;
+        lastGamePlusTwo = null;
     } else {
         lastGame = new Date(studySessionData.expDaysDate);
         lastGame2 = new Date(studySessionData.expDaysDate);
-        yesterdayPlusOne = lastGame2.setDate(lastGame2.getDate() + 1);
-        yesterdayPlusOne = new Date(yesterdayPlusOne)
+        lastGame3 = new Date(studySessionData.expDaysDate);
+        lastGamePlusOne = lastGame2.setDate(lastGame2.getDate() + 1);
+        lastGamePlusOne = new Date(lastGamePlusOne)
+        lastGamePlusTwo = lastGame3.setDate(lastGame3.getDate() + 2);
+        lastGamePlusTwo = new Date(lastGamePlusTwo)
     }
-    return { fullDate, timeNow, today, yesterday, yesterdayPlusOne, lastGame }
+    return { fullDate, timeNow, today, yesterday, lastGamePlusOne, lastGamePlusTwo, lastGame }
 }
 
 

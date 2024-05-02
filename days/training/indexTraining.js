@@ -8,7 +8,7 @@ function timeline() {
             let todayDate = new Date;
             todayDate = todayDate.getDate();
             if (((Number(todayDate) === Number(dayDate())) || (Number(todayDate) === (new Date(studySessionData.expDaysDate).getDate() + 1))) && (studySessionData.isDayDone == "")) { //if it's the same date as the first day or the day after the first day and the user didn't play on the first day. 
-                updatedDates.yesterdayPlusOne = updatedDates.fullDate;
+                updatedDates.lastGamePlusOne = updatedDates.fullDate;
                 let yesterday = new Date;
                 updatedDates.lastGame = new Date(yesterday.setDate(yesterday.getDate() - 1));
                 if (Number(todayDate) === new Date(studySessionData.expDaysDate).getDate() + 1) { // if they didn't play on the first day add to missing days
@@ -16,22 +16,32 @@ function timeline() {
                     platform.saveSession(daysMissed);
                 }
             }
-            if (updatedDates.fullDate.getDate() == updatedDates.lastGame.getDate()) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {
+            if (updatedDates.fullDate.getDate() == updatedDates.lastGame.getDate()) { //|| lastGamePlusOne.getDate() - fullDate.getDate() > 25 ) {
                 fiveAMOrient();
                 setTimeout(() => {
                     moveToDay();
                 }, timeToFive());
             }
-            else if ((updatedDates.fullDate.getDate() == updatedDates.yesterdayPlusOne.getDate()) || (updatedDates.yesterday.getDate() == updatedDates.yesterdayPlusOne.getDate())) {
-                if (updatedDates.fullDate.getDate() != updatedDates.yesterdayPlusOne.getDate()) {
+            else if ((updatedDates.fullDate.getDate() == updatedDates.lastGamePlusOne.getDate()) || (updatedDates.yesterday.getDate() == updatedDates.lastGamePlusOne.getDate())
+                || (updatedDates.yesterday.getDate() == updatedDates.lastGamePlusTwo)) {
+                if (updatedDates.fullDate.getDate() != updatedDates.lastGamePlusOne.getDate()) {
                     getIndexMissedDays(data).then((indexM) => {
                         if (!indexM) {
-                            daysMissedNum.push(1);
+                            if (updatedDates.yesterday.getDate() == updatedDates.lastGamePlusTwo) {
+                                daysMissedNum.push(2);
+                            } else {
+                                daysMissedNum.push(1);
+                            }
                             platform.saveSession(daysMissed);
-                            studySessionData.expDaysDate = updatedDates.yesterdayPlusOne;
-                            platform.saveSession(studySessionData, true);
                         } else {
-                            endGameOrient();
+                            missed = data[indexM]
+                            if ((missed.daysMissedNum <= 1) && (updatedDates.yesterday.getDate() == updatedDates.lastGamePlusOne.getDate())) {
+                                daysMissedNum.push(2);
+                                platform.saveSession(daysMissed);
+                            }
+                            else {
+                                endGameOrient();
+                            }
                         }
                     })
                 }

@@ -10,13 +10,13 @@ function timeline() {
             getIndexSessionData(data).then((indexI) => {
                 studySessionData = data[indexI];
                 let updatedDates = updateDates();
-                if (updatedDates.fullDate.getDate() == updatedDates.lastGame.getDate()) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {
+                if (updatedDates.fullDate.getDate() == updatedDates.lastGame.getDate()) { //|| lastGamePlusOne.getDate() - fullDate.getDate() > 25 ) {
                     fiveAMOrient();
                     setTimeout(() => {
                         moveToDay();
                     }, timeToFive());
                 }
-                else if (updatedDates.fullDate.getDate() == updatedDates.yesterdayPlusOne.getDate() && (studySessionData.doneTest2 != "doneTest2")) { //|| yesterdayPlusOne.getDate() - fullDate.getDate() > 25 ) {)
+                else if (updatedDates.fullDate.getDate() == updatedDates.lastGamePlusOne.getDate() && (studySessionData.doneTest2 != "doneTest2")) { //|| lastGamePlusOne.getDate() - fullDate.getDate() > 25 ) {)
                     if (0 <= updatedDates.fullDate.getHours() & updatedDates.fullDate.getHours() < 5) {
                         fiveAMOrient();
                         setTimeout(() => {
