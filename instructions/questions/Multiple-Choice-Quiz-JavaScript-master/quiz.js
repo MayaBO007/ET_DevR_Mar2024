@@ -15,7 +15,7 @@ const scoreDiv = document.getElementById("scoreContainer");
 let questions = [
     {
         question: 'כמה זמן יימשך המשחק?',
-        choiceA: '12 ימים',
+        choiceA: '19 ימים',
         choiceB: 'שבועיים',
         choiceC: 'חודש',
         correct: "A"
@@ -28,14 +28,13 @@ let questions = [
     }, {
         question: "כמה זמן נמשך המשחק בכל יום?",
         choiceA: "שעה",
-        choiceB: "כמה שרוצים",
-        choiceC: 'עד 5 דקות',
+        choiceB: "4 דקות",
         correct: "C"
     }
     , {
         question: 'מה חשוב לזכור לפני שמתחילים לשחק?',
         choiceA: 'שום דבר',
-        choiceB: 'לוודא שיש לי 5 דקות פנויות ולהעביר את הטלפון למצב "נא לא להפריע"',
+        choiceB: 'לוודא שיש לי 4 דקות פנויות ולהעביר את הטלפון למצב "נא לא להפריע"',
         choiceC: 'לעשות מתיחות',
         correct: "B"
     }, {
