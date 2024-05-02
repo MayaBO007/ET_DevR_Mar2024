@@ -209,7 +209,7 @@ async function startDevTest() {
                     problemOrient()
                     // Handle any errors
                 });
-            }, 250000);
+            }, 190000);
             // }, 3000);
         };
         startIntervalDevtest();
