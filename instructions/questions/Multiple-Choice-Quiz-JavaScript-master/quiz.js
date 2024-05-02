@@ -28,7 +28,8 @@ let questions = [
     }, {
         question: "כמה זמן נמשך המשחק בכל יום?",
         choiceA: "שעה",
-        choiceB: "4 דקות",
+        choiceB: "משתנה בכל יום",
+        choiceC: "4 דקות",
         correct: "C"
     }
     , {
