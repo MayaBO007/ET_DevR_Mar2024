@@ -31,6 +31,8 @@ function timeline() {
                                 platform.saveSession(daysMissed);
                             }
                             else {
+                                daysMissedNum.push(2);
+                                platform.saveSession(daysMissed);
                                 endGameOrient();
                             }
                         }
