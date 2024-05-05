@@ -23,7 +23,7 @@ function timeline() {
                 }, timeToFive());
             }
             else if ((updatedDates.fullDate.getDate() == updatedDates.lastGamePlusOne.getDate()) || (updatedDates.yesterday.getDate() == updatedDates.lastGamePlusOne.getDate())
-                || (updatedDates.yesterday.getDate() == updatedDates.lastGamePlusTwo)) {
+                || (updatedDates.yesterday.getDate() == updatedDates.lastGamePlusTwo.getDate())) {
                 if (updatedDates.fullDate.getDate() != updatedDates.lastGamePlusOne.getDate()) {
                     getIndexMissedDays(data).then((indexM) => {
                         if (!indexM) {
