@@ -27,7 +27,7 @@ function timeline() {
                 if (updatedDates.fullDate.getDate() != updatedDates.lastGamePlusOne.getDate()) {
                     getIndexMissedDays(data).then((indexM) => {
                         if (!indexM) {
-                            if (updatedDates.yesterday.getDate() == updatedDates.lastGamePlusTwo) {
+                            if (updatedDates.yesterday.getDate() == updatedDates.lastGamePlusTwo.getDate()) {
                                 daysMissedNum.push(2);
                             } else {
                                 daysMissedNum.push(1);
