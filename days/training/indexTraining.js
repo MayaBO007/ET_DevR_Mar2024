@@ -32,12 +32,10 @@ function timeline() {
                             } else {
                                 daysMissedNum.push(1);
                             }
-                            platform.saveSession(daysMissed);
                         } else {
                             missed = data[indexM]
                             if ((missed.daysMissedNum <= 1) && (updatedDates.yesterday.getDate() == updatedDates.lastGamePlusOne.getDate())) {
                                 daysMissedNum.push(2);
-                                platform.saveSession(daysMissed);
                             }
                             else {
                                 daysMissedNum.push(2);
@@ -58,6 +56,9 @@ function timeline() {
                         let isDayDone = await trainingDay();
                         if (isDayDone == "done") {
                             clearInterval(sessionIntervalTrainingDay);
+                            if (updatedDates.fullDate.getDate() != updatedDates.lastGamePlusOne.getDate()) {
+                                platform.saveSession(daysMissed);
+                            }
                             let updatedDates = updateDates();
                             studySessionData.isDayDone = "done";
                             studySessionData.expDaysDate = updatedDates.fullDate;
