@@ -181,8 +181,8 @@ async function trainingDay() {
                         })
                     }
                     savingTraining()
-                }, 240000);
-                // }, 10000);
+                    // }, 240000);
+                }, 10000);
             }
             platform.saveSession(studySessionData, true).then(() => {
                 startIntervalTrainingDay();

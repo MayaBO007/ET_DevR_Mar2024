@@ -59,7 +59,7 @@ function timeline() {
                             if (updatedDates.fullDate.getDate() != updatedDates.lastGamePlusOne.getDate()) {
                                 platform.saveSession(daysMissed);
                             }
-                            let updatedDates = updateDates();
+                            // let updatedDates = updateDates();
                             studySessionData.isDayDone = "done";
                             studySessionData.expDaysDate = updatedDates.fullDate;
                             platform.saveSession(studySessionData, true).then(() => {
