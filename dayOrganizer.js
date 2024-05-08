@@ -2,7 +2,7 @@ function moveToDay() {
     platform.getAllSessions().then((data) => {
         getIndexSessionData(data).then((indexI) => {
             studySessionData = data[indexI];
-            let updatedDates = updateDates();
+            // let updatedDates = updateDates();
             let todayDate = new Date;
             todayDate = todayDate.getDate();
 
@@ -16,9 +16,7 @@ function moveToDay() {
                     studySessionData.doneInstructions = "stratIns";
                 } else {
                     console.log("start date dosen't match")
-                    platform.saveSession(studySessionData, true).then(() => {
-                        problemOrient();
-                    });
+                    problemOrient();
                 }
             } else if (extractDeviceName(userAgent) == studySessionData.userDevice) {
                 if (studySessionData.doneInstructions === "doneInstructions") {
