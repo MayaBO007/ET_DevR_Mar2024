@@ -11,7 +11,7 @@ function moveToDay() {
 
 
             if ((typeof studySessionData === "undefined" || studySessionData.doneInstructions === "")) {
-                if (Number(todayDate) === 2) { //change to exp start date
+                if (Number(todayDate) === 8) { //change to exp start date
                     platform.goToUrl("instructions/instructions.html");
                     studySessionData.doneInstructions = "stratIns";
                 } else {
