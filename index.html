@@ -186,6 +186,15 @@
         if (localStorage.getItem('standaloneMode') === 'true') {
             // The web app is running in standalone mode
             document.getElementById("startImage").style.display = "inline";
+            if (
+                (("standalone" in window.navigator) && !window.navigator.standalone) // for ios
+                ||
+                (!window.matchMedia('(disply-mode: standalone)').matches) //android
+            ) {
+                notAppYet();
+                addToHomescreen()
+                localStorage.setItem('standaloneMode', 'true');
+            }
         } else {
             // The web app is not running in standalone mode
             // console.log('Web app is not running in standalone mode');
