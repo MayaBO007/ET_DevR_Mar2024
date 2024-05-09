@@ -2,7 +2,7 @@ function moveToDay() {
     platform.getAllSessions().then((data) => {
         getIndexSessionData(data).then((indexI) => {
             studySessionData = data[indexI];
-            let updatedDates = updateDates();
+            // let updatedDates = updateDates();
             let todayDate = new Date;
             todayDate = todayDate.getDate();
 
@@ -11,13 +11,12 @@ function moveToDay() {
 
 
             if ((typeof studySessionData === "undefined" || studySessionData.doneInstructions === "")) {
-                if (Number(todayDate) === 5) { //change to exp start date
+                if (Number(todayDate) === 8) { //change to exp start date
                     platform.goToUrl("instructions/instructions.html");
                     studySessionData.doneInstructions = "stratIns";
                 } else {
-                    platform.saveSession(studySessionData, true).then(() => {
-                        problemOrient();
-                    });
+                    console.log("start date dosen't match")
+                    problemOrient();
                 }
             } else if (extractDeviceName(userAgent) == studySessionData.userDevice) {
                 if (studySessionData.doneInstructions === "doneInstructions") {
