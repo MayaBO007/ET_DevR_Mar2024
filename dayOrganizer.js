@@ -11,7 +11,7 @@ function moveToDay() {
 
 
             if ((typeof studySessionData === "undefined" || studySessionData.doneInstructions === "")) {
-                if (Number(todayDate) === 9) { //change to exp start date
+                if (Number(todayDate) === 19) { //change to exp start date
                     platform.goToUrl("instructions/instructions.html");
                     studySessionData.doneInstructions = "stratIns";
                 } else {
@@ -20,7 +20,7 @@ function moveToDay() {
                 }
             } else if (extractDeviceName(userAgent) == studySessionData.userDevice) {
                 if (studySessionData.doneInstructions === "doneInstructions") {
-                    if (((todayDate >= "20") || (Number(todayDate) === 20)) && (studySessionData.doneTest1 == "")) { //NO ZEROS IN FRONT OF SINGEL DIGITS
+                    if (((todayDate >= "16") || (Number(todayDate) === 16)) && (studySessionData.doneTest1 == "")) { //NO ZEROS IN FRONT OF SINGEL DIGITS
                         platform.goToUrl("days/twoTests/twoTests.html");
                     } else if
                         (
