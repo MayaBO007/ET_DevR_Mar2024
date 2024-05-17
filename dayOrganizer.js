@@ -20,7 +20,7 @@ function moveToDay() {
                 }
             } else if (extractDeviceName(userAgent) == studySessionData.userDevice) {
                 if (studySessionData.doneInstructions === "doneInstructions") {
-                    if (((todayDate >= "5") || (Number(todayDate) === 5)) && (studySessionData.doneTest1 == "")) { //NO ZEROS IN FRONT OF SINGEL DIGITS
+                    if (((todayDate == "5") || (Number(todayDate) === 5)) && (studySessionData.doneTest1 == "")) { //NO ZEROS IN FRONT OF SINGEL DIGITS
                         platform.goToUrl("days/twoTests/twoTests.html");
                     } else if
                         (
